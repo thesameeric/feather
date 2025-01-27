@@ -6,121 +6,90 @@
 //
 
 import Cocoa
+import AVFoundation
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
+    private var statusItem: NSStatusItem?
+
+    static func main() {
+        let app = NSApplication.shared
+        let delegate = AppDelegate()
+        app.delegate = delegate
+        app.run()
+    }
 
     
-
-
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+    func applicationDidFinishLaunching(_ notification: Notification) {
+        requestAccessibilityPermissions()
+        setupMenuBar()
+        SoundManager.shared.loadSounds(for: "cream")
+        SoundManager.shared.updateVolume(0.7)
+        KeyboardMonitor.shared.startMonitoring()
     }
-
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
-    }
-
-    func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {
-        return true
-    }
-
-    // MARK: - Core Data stack
-
-    lazy var persistentContainer: NSPersistentContainer = {
-        /*
-         The persistent container for the application. This implementation
-         creates and returns a container, having loaded the store for the
-         application to it. This property is optional since there are legitimate
-         error conditions that could cause the creation of the store to fail.
-        */
-        let container = NSPersistentContainer(name: "feather")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                 
-                /*
-                 Typical reasons for an error here include:
-                 * The parent directory does not exist, cannot be created, or disallows writing.
-                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-                 * The device is out of space.
-                 * The store could not be migrated to the current model version.
-                 Check the error message to determine what the actual problem was.
-                 */
-                fatalError("Unresolved error \(error)")
-            }
-        })
-        return container
-    }()
-
-    // MARK: - Core Data Saving and Undo support
-
-    func save() {
-        // Performs the save action for the application, which is to send the save: message to the application's managed object context. Any encountered errors are presented to the user.
-        let context = persistentContainer.viewContext
-
-        if !context.commitEditing() {
-            NSLog("\(NSStringFromClass(type(of: self))) unable to commit editing before saving")
-        }
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                // Customize this code block to include application-specific recovery steps.
-                let nserror = error as NSError
-                NSApplication.shared.presentError(nserror)
-            }
-        }
-    }
-
-    func windowWillReturnUndoManager(window: NSWindow) -> UndoManager? {
-        // Returns the NSUndoManager for the application. In this case, the manager returned is that of the managed object context for the application.
-        return persistentContainer.viewContext.undoManager
-    }
-
-    func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
-        // Save changes in the application's managed object context before the application terminates.
-        let context = persistentContainer.viewContext
-        
-        if !context.commitEditing() {
-            NSLog("\(NSStringFromClass(type(of: self))) unable to commit editing to terminate")
-            return .terminateCancel
-        }
-        
-        if !context.hasChanges {
-            return .terminateNow
-        }
-        
-        do {
-            try context.save()
-        } catch {
-            let nserror = error as NSError
-
-            // Customize this code block to include application-specific recovery steps.
-            let result = sender.presentError(nserror)
-            if (result) {
-                return .terminateCancel
-            }
-            
-            let question = NSLocalizedString("Could not save changes while quitting. Quit anyway?", comment: "Quit without saves error question message")
-            let info = NSLocalizedString("Quitting now will lose any changes you have made since the last successful save", comment: "Quit without saves error question info");
-            let quitButton = NSLocalizedString("Quit anyway", comment: "Quit anyway button title")
-            let cancelButton = NSLocalizedString("Cancel", comment: "Cancel button title")
-            let alert = NSAlert()
-            alert.messageText = question
-            alert.informativeText = info
-            alert.addButton(withTitle: quitButton)
-            alert.addButton(withTitle: cancelButton)
-            
-            let answer = alert.runModal()
-            if answer == .alertSecondButtonReturn {
-                return .terminateCancel
-            }
-        }
-        // If we got here, it is time to quit.
-        return .terminateNow
-    }
-
 }
 
+extension AppDelegate {
+    func setupMenuBar() {
+        statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+        
+        if let favicon = NSImage(named: "favicon"){
+            statusItem?.button?.image = favicon
+        } else {
+            statusItem?.button?.title = "MechKey"
+        }
+        
+        let menu = NSMenu()
+        // Volume submenu
+        let volumeMenu = NSMenu()
+        volumeMenu.addItem(NSMenuItem(title: "100%", action: #selector(setVolume100), keyEquivalent: ""))
+        volumeMenu.addItem(NSMenuItem(title: "75%", action: #selector(setVolume75), keyEquivalent: ""))
+        volumeMenu.addItem(NSMenuItem(title: "50%", action: #selector(setVolume50), keyEquivalent: ""))
+        volumeMenu.addItem(NSMenuItem(title: "25%", action: #selector(setVolume25), keyEquivalent: ""))
+        volumeMenu.addItem(NSMenuItem(title: "0%", action: #selector(setVolumeMute), keyEquivalent: ""))
+
+        let volumeMenuItem = NSMenuItem(title: "Volume", action: nil, keyEquivalent: "")
+        volumeMenuItem.submenu = volumeMenu
+        menu.addItem(volumeMenuItem)
+        
+        menu.addItem(NSMenuItem(title: "Mute", action: #selector(toggleMute), keyEquivalent: ""))
+        menu.addItem(NSMenuItem.separator())
+        menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+        
+        statusItem?.menu = menu
+    }
+    
+    // Add these action methods
+    @objc func setVolume100() {
+        Settings.shared.volume = 1.0
+    }
+    
+    @objc func setVolume75() {
+        Settings.shared.volume = 0.75
+    }
+    
+    @objc func setVolume50() {
+        Settings.shared.volume = 0.50
+    }
+    
+    @objc func setVolume25() {
+        Settings.shared.volume = 0.25
+    }
+    
+    @objc func setVolumeMute() {
+        Settings.shared.volume = 0
+    }
+    
+    @objc func toggleMute() {
+        Settings.shared.isMuted = !Settings.shared.isMuted
+        // Update menu item state
+        if let menuItem = statusItem?.menu?.item(withTitle: "Mute") {
+            menuItem.state = Settings.shared.isMuted ? .on : .off
+        }
+        if !Settings.shared.isMuted {
+            Settings.shared.volume = 0
+        } else {
+            Settings.shared.volume = 0.7
+        }
+    }
+}

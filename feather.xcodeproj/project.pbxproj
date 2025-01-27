@@ -6,6 +6,21 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		079D93BD2D45B9C30045EA37 /* GENERIC.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 079D93BA2D45B9C30045EA37 /* GENERIC.mp3 */; };
+		079D93BF2D45B9C30045EA37 /* GENERIC_R3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 079D93B42D45B9C30045EA37 /* GENERIC_R3.mp3 */; };
+		079D93C02D45B9C30045EA37 /* GENERIC_R0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 079D93B12D45B9C30045EA37 /* GENERIC_R0.mp3 */; };
+		079D93C22D45B9C30045EA37 /* GENERIC_R1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 079D93B22D45B9C30045EA37 /* GENERIC_R1.mp3 */; };
+		079D93C32D45B9C30045EA37 /* BACKSPACE.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 079D93AF2D45B9C30045EA37 /* BACKSPACE.mp3 */; };
+		079D93C42D45B9C30045EA37 /* SPACE.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 079D93B62D45B9C30045EA37 /* SPACE.mp3 */; };
+		079D93C52D45B9C30045EA37 /* GENERIC_R2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 079D93B32D45B9C30045EA37 /* GENERIC_R2.mp3 */; };
+		079D93C62D45B9C30045EA37 /* GENERIC_R4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 079D93B52D45B9C30045EA37 /* GENERIC_R4.mp3 */; };
+		079D93C82D45B9C30045EA37 /* ENTER.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 079D93B02D45B9C30045EA37 /* ENTER.mp3 */; };
+		079D93D42D45BD540045EA37 /* SPACE_RELEASE.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 079D93D32D45BD540045EA37 /* SPACE_RELEASE.mp3 */; };
+		079D93D52D45BD540045EA37 /* ENTER_RELEASE.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 079D93D22D45BD540045EA37 /* ENTER_RELEASE.mp3 */; };
+		079D93D62D45BD540045EA37 /* BACKSPACE_RELEASE.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 079D93D12D45BD540045EA37 /* BACKSPACE_RELEASE.mp3 */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		07891B5C2D40A83500DE5D7C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +42,18 @@
 		07891B472D40A83200DE5D7C /* feather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = feather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07891B5B2D40A83500DE5D7C /* featherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = featherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07891B652D40A83500DE5D7C /* featherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = featherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		079D93AF2D45B9C30045EA37 /* BACKSPACE.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BACKSPACE.mp3; sourceTree = "<group>"; };
+		079D93B02D45B9C30045EA37 /* ENTER.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ENTER.mp3; sourceTree = "<group>"; };
+		079D93B12D45B9C30045EA37 /* GENERIC_R0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GENERIC_R0.mp3; sourceTree = "<group>"; };
+		079D93B22D45B9C30045EA37 /* GENERIC_R1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GENERIC_R1.mp3; sourceTree = "<group>"; };
+		079D93B32D45B9C30045EA37 /* GENERIC_R2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GENERIC_R2.mp3; sourceTree = "<group>"; };
+		079D93B42D45B9C30045EA37 /* GENERIC_R3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GENERIC_R3.mp3; sourceTree = "<group>"; };
+		079D93B52D45B9C30045EA37 /* GENERIC_R4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GENERIC_R4.mp3; sourceTree = "<group>"; };
+		079D93B62D45B9C30045EA37 /* SPACE.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SPACE.mp3; sourceTree = "<group>"; };
+		079D93BA2D45B9C30045EA37 /* GENERIC.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GENERIC.mp3; sourceTree = "<group>"; };
+		079D93D12D45BD540045EA37 /* BACKSPACE_RELEASE.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BACKSPACE_RELEASE.mp3; sourceTree = "<group>"; };
+		079D93D22D45BD540045EA37 /* ENTER_RELEASE.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ENTER_RELEASE.mp3; path = Sounds/cream/release/ENTER_RELEASE.mp3; sourceTree = SOURCE_ROOT; };
+		079D93D32D45BD540045EA37 /* SPACE_RELEASE.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SPACE_RELEASE.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +102,7 @@
 		07891B3E2D40A83200DE5D7C = {
 			isa = PBXGroup;
 			children = (
+				079D935B2D4104160045EA37 /* Sounds */,
 				07891B492D40A83200DE5D7C /* feather */,
 				07891B5E2D40A83500DE5D7C /* featherTests */,
 				07891B682D40A83500DE5D7C /* featherUITests */,
@@ -90,6 +118,49 @@
 				07891B652D40A83500DE5D7C /* featherUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		079D935B2D4104160045EA37 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				079D93AE2D45B9A10045EA37 /* cream */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		079D93AE2D45B9A10045EA37 /* cream */ = {
+			isa = PBXGroup;
+			children = (
+				079D93B72D45B9C30045EA37 /* press */,
+				079D93BC2D45B9C30045EA37 /* release */,
+			);
+			path = cream;
+			sourceTree = "<group>";
+		};
+		079D93B72D45B9C30045EA37 /* press */ = {
+			isa = PBXGroup;
+			children = (
+				079D93AF2D45B9C30045EA37 /* BACKSPACE.mp3 */,
+				079D93B02D45B9C30045EA37 /* ENTER.mp3 */,
+				079D93B12D45B9C30045EA37 /* GENERIC_R0.mp3 */,
+				079D93B22D45B9C30045EA37 /* GENERIC_R1.mp3 */,
+				079D93B32D45B9C30045EA37 /* GENERIC_R2.mp3 */,
+				079D93B42D45B9C30045EA37 /* GENERIC_R3.mp3 */,
+				079D93B52D45B9C30045EA37 /* GENERIC_R4.mp3 */,
+				079D93B62D45B9C30045EA37 /* SPACE.mp3 */,
+			);
+			path = press;
+			sourceTree = "<group>";
+		};
+		079D93BC2D45B9C30045EA37 /* release */ = {
+			isa = PBXGroup;
+			children = (
+				079D93BA2D45B9C30045EA37 /* GENERIC.mp3 */,
+				079D93D12D45BD540045EA37 /* BACKSPACE_RELEASE.mp3 */,
+				079D93D22D45BD540045EA37 /* ENTER_RELEASE.mp3 */,
+				079D93D32D45BD540045EA37 /* SPACE_RELEASE.mp3 */,
+			);
+			path = release;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +283,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				079D93D42D45BD540045EA37 /* SPACE_RELEASE.mp3 in Resources */,
+				079D93D52D45BD540045EA37 /* ENTER_RELEASE.mp3 in Resources */,
+				079D93D62D45BD540045EA37 /* BACKSPACE_RELEASE.mp3 in Resources */,
+				079D93BD2D45B9C30045EA37 /* GENERIC.mp3 in Resources */,
+				079D93BF2D45B9C30045EA37 /* GENERIC_R3.mp3 in Resources */,
+				079D93C02D45B9C30045EA37 /* GENERIC_R0.mp3 in Resources */,
+				079D93C22D45B9C30045EA37 /* GENERIC_R1.mp3 in Resources */,
+				079D93C32D45B9C30045EA37 /* BACKSPACE.mp3 in Resources */,
+				079D93C42D45B9C30045EA37 /* SPACE.mp3 in Resources */,
+				079D93C52D45B9C30045EA37 /* GENERIC_R2.mp3 in Resources */,
+				079D93C62D45B9C30045EA37 /* GENERIC_R4.mp3 in Resources */,
+				079D93C82D45B9C30045EA37 /* ENTER.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,16 +475,23 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = feather/feather.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZRW55A26UB;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = feather/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				INFOPLIST_KEY_NSSystemAdministrationUsageDescription = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -409,6 +499,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = thesameeric.feather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -419,16 +510,23 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = feather/feather.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZRW55A26UB;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = feather/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				INFOPLIST_KEY_NSSystemAdministrationUsageDescription = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -436,6 +534,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = thesameeric.feather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
