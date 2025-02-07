@@ -54,6 +54,11 @@ extension AppDelegate {
         
         menu.addItem(NSMenuItem(title: "Mute", action: #selector(toggleMute), keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
+        
+        let textItem = NSMenuItem(title: "Keys: Creams", action: nil, keyEquivalent: "")
+        textItem.isEnabled = false
+        menu.addItem(textItem)
+        
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
         
         statusItem?.menu = menu
