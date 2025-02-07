@@ -1,6 +1,6 @@
 # Mechanical Keyboard Sound Simulator
 
-A Swift application that simulates mechanical keyboard sounds for Mac. This app adds satisfying mechanical keyboard feedback to your typing experience.
+A Swift application that simulates mechanical keyboard sounds for Mac. This app adds satisfying mechanical keyboard feedback to your typing experience. This is an adaptation from https://kbs.im.
 
 ## Features
 
