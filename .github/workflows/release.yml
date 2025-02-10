@@ -15,11 +15,12 @@ jobs:
 
       - name: Build App
         run: |
-          xcodebuild -scheme feather -configuration Release -project feather.xcodeproj CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+          xcodebuild -scheme feather -configuration Release -project feather.xcodeproj CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO \
+          -derivedDataPath out
 
       - name: Create ZIP
         run: |
-          cd build/Release
+          cd out/Build/Products/Release
           zip -r feather.app.zip feather.app
 
       - name: Generate SHA256
