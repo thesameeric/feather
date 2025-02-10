@@ -25,13 +25,13 @@ jobs:
 
       - name: Generate SHA256
         run: |
-          shasum -a 256 build/Release/feather.app.zip > SHA256SUMS
+          shasum -a 256 out/Build/Products/Release/feather.app.zip > SHA256SUMS
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            build/Release/feather.app.zip
+            out/Build/Products/Release/feather.app.zip
             SHA256SUMS
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
