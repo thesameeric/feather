@@ -124,13 +124,8 @@ Sounds/
 5. Open a Pull Request
 
 ## License
-
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgments
-
-- Sound samples sourced from [source_name]
-- Inspired by mechanical keyboard enthusiasts
+- Inspired by mechanical keyboard simulator https://kbs.im/
 ```
-
-Would you like me to modify or add any specific sections to the README?
