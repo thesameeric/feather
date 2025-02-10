@@ -24,6 +24,17 @@ git clone https://github.com/yourusername/keyboard-sound-simulator.git
 2. Open the project in Xcode
 3. Build and run the application
 
+## Installation
+
+### Using Homebrew
+```bash
+# Add the tap
+brew tap yourusername/tap
+
+# Install Feather
+brew install --cask feather
+```
+
 ## Running the Application
 ### Method 1: Running from Xcode
 

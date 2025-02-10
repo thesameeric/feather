@@ -1,0 +1,55 @@
+name: Release
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build App
+        run: |
+          xcodebuild -scheme feather -configuration Release
+
+      - name: Create ZIP
+        run: |
+          cd build/Release
+          zip -r feather.app.zip feather.app
+
+      - name: Generate SHA256
+        run: |
+          shasum -a 256 build/Release/feather.app.zip > SHA256SUMS
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            build/Release/feather.app.zip
+            SHA256SUMS
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update Homebrew Formula
+        run: |
+          SHA256=$(cat SHA256SUMS | cut -d' ' -f1)
+          VERSION=${GITHUB_REF#refs/tags/v}
+
+          # Clone homebrew-tap repo
+          git clone https://github.com/yourusername/homebrew-tap.git
+          cd homebrew-tap
+
+          # Update formula
+          sed -i '' "s/version \".*\"/version \"$VERSION\"/" Casks/feather.rb
+          sed -i '' "s/sha256 \".*\"/sha256 \"$SHA256\"/" Casks/feather.rb
+
+          # Commit and push changes
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "Update Feather to version $VERSION"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
