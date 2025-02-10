@@ -52,8 +52,8 @@ jobs:
           sed -i '' "s/sha256 \".*\"/sha256 \"$SHA256\"/" Casks/feather.rb
 
           # Commit and push changes
-          git config user.name github-actions
-          git config user.email github-actions@github.com
+          git config user.name thesameeric
+          git config user.email osivwiokiti@gmail.com
           git add .
           git commit -m "Update Feather to version $VERSION"
           git push
