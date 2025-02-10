@@ -40,12 +40,12 @@ jobs:
 
       - name: Update Homebrew Formula
         run: |
+          # Clone homebrew-tap repo
+          git clone https://x-access-token:${GH_TOKEN}@github.com/thesameeric/homebrew-tap.git
+          cd homebrew-tap
+
           SHA256=$(cat SHA256SUMS | cut -d' ' -f1)
           VERSION=${GITHUB_REF#refs/tags/v}
-
-          # Clone homebrew-tap repo
-          git clone https://github.com/thesameeric/homebrew-tap.git
-          cd homebrew-tap
 
           # Update formula
           sed -i '' "s/version \".*\"/version \"$VERSION\"/" Casks/feather.rb
@@ -58,4 +58,4 @@ jobs:
           git commit -m "Update Feather to version $VERSION"
           git push
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
