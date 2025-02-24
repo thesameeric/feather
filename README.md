@@ -18,7 +18,7 @@ A Swift application that simulates mechanical keyboard sounds for Mac. This app 
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/keyboard-sound-simulator.git
+git clone https://github.com/<yourusername>/feathers.git
 ```
 
 2. Open the project in Xcode
@@ -29,7 +29,7 @@ git clone https://github.com/yourusername/keyboard-sound-simulator.git
 ### Using Homebrew
 ```bash
 # Add the tap
-brew tap yourusername/tap
+brew tap thesameeric/tap
 
 # Install Feather
 brew install --cask feather
